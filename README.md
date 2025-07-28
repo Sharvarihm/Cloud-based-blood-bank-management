@@ -110,23 +110,6 @@ The backend is deployed entirely on AWS using Lambda, API Gateway, and DynamoDB.
 
 ---
 
-## Project Structure
-
-```
-blood-bank-project/
-├── backend/
-│   ├── lambda_functions/
-│   ├── dynamodb_schema.md
-│   ├── api_endpoints.md
-│   ├── s3_bucket_structure.md
-│   └── architecture.png
-├── frontend/        (React build output)
-├── screenshots/     (Optional screenshots/images)
-└── README.md
-```
-
----
-
 ## Deployment Steps
 
 1. Set up your Lambda functions on AWS Lambda.
@@ -140,15 +123,6 @@ blood-bank-project/
 5. Upload the contents of the `build/` folder to the S3 bucket `blood-frontend`.
 6. Enable static website hosting and public access in S3.
 7. Test all routes and integration.
-
----
-
-## Future Improvements
-
-* Add user authentication using AWS Cognito
-* Enable email notifications via Amazon SES
-* Integrate monitoring with CloudWatch
-* Add admin dashboard with analytics
 
 ---
 
