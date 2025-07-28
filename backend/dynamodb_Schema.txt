@@ -1,0 +1,72 @@
+# DynamoDB Schema – Blood Bank Management System
+
+This backend uses three DynamoDB tables: `BloodStock`, `Donors`, and `HospitalRequests`. All tables use on-demand capacity mode and do not have sort keys or secondary indexes.
+
+---
+
+## Table: BloodStock
+
+| Field           | Type   | Key Type       | Description                         |
+|------------------|--------|----------------|-------------------------------------|
+| blood_type       | String | Partition Key  | Blood group (e.g., A+, O-)          |
+| units_available  | Number | -              | Number of blood units available     |
+
+- Item count: 8  
+- Average item size: 31.5 bytes  
+- Table status: Active  
+- Capacity mode: On-demand  
+- Point-in-time recovery (PITR): Off  
+
+
+---
+
+## Table: Donors
+
+| Field      | Type   | Key Type       | Description                        |
+|-------------|--------|----------------|------------------------------------|
+| donor_id    | String | Partition Key  | Unique donor identifier            |
+| name        | String | -              | Donor's full name                  |
+| age         | Number | -              | Donor's age                        |
+| blood_type  | String | -              | Donor’s blood group                |
+| contact     | String | -              | Phone number or email              |
+
+- Item count: 15  
+- Average item size: 66.33 bytes  
+- Table status: Active  
+- Capacity mode: On-demand  
+- Point-in-time recovery (PITR): Off  
+
+---
+
+## Table: HospitalRequests
+
+| Field                | Type   | Key Type       | Description                            |
+|-----------------------|--------|----------------|----------------------------------------|
+| request_id            | String | Partition Key  | Unique ID for each hospital request    |
+| hospital_name         | String | -              | Name of the requesting hospital        |
+| requested_blood_type  | String | -              | Blood group being requested            |
+| units_requested       | Number | -              | Number of blood units needed           |
+| timestamp             | String | -              | Timestamp of request submission        |
+
+- Item count: 47  
+- Average item size: 111.11 bytes  
+- Table status: Active  
+- Capacity mode: On-demand  
+- Point-in-time recovery (PITR): Off  
+
+---
+
+## Additional Configuration (All Tables)
+
+- Auto Scaling: Not enabled  
+- Sort Key: Not used  
+- Secondary Indexes: None  
+- Backups and PITR: Disabled  
+- Global Tables / Replication: Not used  
+- Monitoring and Alarms: Not configured
+
+---
+
+## Summary
+
+All three tables are designed for a serverless, real-time cloud application using AWS Lambda and API Gateway. The structure is simple and efficient, optimized for rapid access and updates.

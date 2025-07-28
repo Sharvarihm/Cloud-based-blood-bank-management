@@ -1,0 +1,41 @@
+# API Gateway Configuration
+
+The API Gateway is used to connect HTTP endpoints to corresponding Lambda functions.
+
+## Base URL:
+https://your-api-id.execute-api.region.amazonaws.com/prod/
+
+## Endpoints:
+
+### 1. Register Donor
+- **Method**: POST
+- **Endpoint**: `/register-donor`
+- **Lambda Function**: donorRegistration_funtion.py
+
+---
+
+### 2. Request Blood
+- **Method**: POST
+- **Endpoint**: `/request-blood`
+- **Lambda Function**: hospitalRequestHandler_funtion.py
+
+---
+
+### 3. View Blood Stock
+- **Method**: GET
+- **Endpoint**: `/view-stock`
+- **Lambda Function**: viewStockAvailability_function.py
+
+---
+
+### 4. List Donors
+- **Method**: GET
+- **Endpoint**: `/list-donors`
+- **Lambda Function**: listDonors_function.py
+
+---
+
+### 5. Contact Donor
+- **Method**: POST
+- **Endpoint**: `/cotact-donor`
+- **Lambda Function**: contactDonorHandler_function.py
